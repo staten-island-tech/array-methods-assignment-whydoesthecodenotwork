@@ -5,25 +5,22 @@ const fruits = [
     { name: "dragon fruit", cost: 4.47, weight: 254, appearance: ["🐲", "🐉"] },
 ];
 
-const cheapFruits = [];
-
 function print(element) {
     console.log(element.name);
 
-    element.appearance.forEach((fruit) => {
-        console.log(fruit);
+    element.appearance.forEach((emoji) => {
+        console.log(emoji);
     });
-
-    if (filterArray(element)) {
-        cheapFruits.push(element.name);
-    }
-}
-
-function filterArray(array) {
-    return array.cost < 1;
 }
 
 fruits.forEach(print);
+
+const cheapFruits = fruits.filter((fruit) => fruit.cost < 1);
+
+cheapFruitNames = [];
+cheapFruits.forEach((fruit) => cheapFruitNames.push(fruit.name));
+/*fruit doesn't even look like a real word anymore*/
+
 console.log(
-    "Array of fruits that cost less than 1 dollar each: " + cheapFruits
+    "Array of fruits that cost less than 1 dollar each: " + cheapFruitNames
 );
